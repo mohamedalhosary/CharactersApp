@@ -1,0 +1,20 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_breaking/app_router.dart';
+
+void main() {
+  runApp(BreakingApp(appRouter: AppRouter()));
+}
+
+class BreakingApp extends StatelessWidget {
+  final AppRouter appRouter;
+
+  const BreakingApp({super.key, required this.appRouter});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      onGenerateRoute: appRouter.GenerateRoute,
+    );
+  }
+}
